@@ -1,0 +1,101 @@
+<form name="form" ngNativeValidate #xrpform="ngForm">
+  <br>
+
+  <br>
+  <div class="container">
+    <div>
+      <input type="radio" name="toggle" (change)="changeRadio(true)" style="margin-left: 250px;" checked/><label><b>&nbsp;Average &nbsp;&nbsp;</b></label>
+      <input type="radio" name="toggle" (change)="changeRadio(false)" style="margin-left:45px" /><label><b>&nbsp;Price</b></label><br><br>
+    </div>
+    <!--Div for average calculation-->
+    <div *ngIf="isAverageChecked">
+      <div id="row1">
+        <div id="column1">
+          <label><b>Quantity</b></label>
+          <input type="number" placeholder="Enter Quantity" min="0" name="quantityForAvg" step="100" [(ngModel)]="avgQuantity" required>
+          <br>
+
+          <label><b>Price</b></label>
+          <input type="number" placeholder="Enter Price Per XRP" min="0" name="perPriceForAvg" [(ngModel)]="avgPrice" required></div>
+
+        <div id="column2">
+          <tr>
+            <th>Quantity</th>
+            <th>Per Price</th>
+          </tr>
+          <tr *ngFor="let details of displayAvgDetails">
+            <td>{{details.quantity}}</td>
+            <td>{{details.price}}</td>
+          </tr>
+        </div>
+        <p-chart type="bar" [data]="data"></p-chart>
+      </div>
+      <div style="padding-left: 250px">
+        <button style="margin-right: 5px" [disabled]="!(xrpform.valid && (avgQuantity!=0) && (avgPrice!=0))" (click)="add()">Add</button>
+        <button style="margin-right: 5px" (click)="reset()">Reset</button>
+      </div>
+      <h5>Average:{{average}}</h5>
+    </div>
+    <!--Div for price calculation-->
+    <div id="row1" *ngIf="isPriceChecked">
+      <div>
+        <div id="column1">
+          <div>
+            <label><b>Quantity</b></label>
+            <input type="number" placeholder="Enter Quantity" min="1" name="Quantity" step="100" [(ngModel)]=transcationDetails.quantity
+              style="margin-left: 82px; margin-top: 20px;" required><br>
+          </div>
+          <div>
+            <label><b>Price Per XRP</b></label>
+            <input type="number" placeholder="Enter PriceperXRP" name="perPrice" step="0.01" [(ngModel)]=transcationDetails.xrpPerBuyingPrice
+              style="margin-left: 40px;margin-top: 20px;" required>
+            <br>
+            <div>
+              <label><b>Profit</b></label>
+              <input type="number" placeholder="Enter Profit" name="profit" step="100" [(ngModel)]=transcationDetails.profit style="margin-left: 105px; margin-top: 20px;"
+                required>
+              <br>
+              <button style="margin-left: 200px; margin-top: 20px;" (click)="getTranscationDetails()" [disabled]="!xrpform.valid">Submit</button>
+            </div>
+          </div>
+        </div>
+        <div id="column2">
+          <div>
+            <p>
+              Total Cost(buying):{{responseTranscationDetails.totalBuyingCost}}<br><br> Total Cost(Selling): {{responseTranscationDetails.totalSellingcost}}<br><br>              SP Per XRP:{{responseTranscationDetails.xrpPerSellingPrice}}
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+<!-- <p-calendar name="date" [(ngModel)]="date" [showIcon]="true" dateFormat="dd.mm.yy"></p-calendar> -->
+  </div>
+  <diV>
+  
+  </diV> 
+  <p-dataTable [value]="buyingHistory" [rows]="2" [paginator]="true">
+      <p-column field="username" header="Vin"></p-column>
+      <p-column field="password" header="Year"></p-column>
+      
+      <p-paginator rows="10" totalRecords="100" pageLinkSize="3"></p-paginator>
+  </p-dataTable>
+  
+
+  <!-- <iframe id='widget-ticker-preview' src='//www.coingecko.com/en/widget_component/ticker/ripple/inr?id=ripple' style='border:none; height:125px; width: 275px;' scrolling='no' frameborder='0' allowTransparency='true'></iframe>
+  <iframe id="widget-ticker-preview" src="//www.coingecko.com/en/widget_component/ticker/bitcoin/inr" style="border:none; height:125px; width: 275px;" scrolling="no" allowtransparency="true" frameborder="0"></iframe> -->
+  <!-- <div style="display:inline-block; min-height:290px;">
+    <input type="text">
+    <button type="button" class="btn btn-default btn-sm" >
+          <span class="glyphicon glyphicon-calendar"></span> Calendar
+        </button>
+    <datepicker *ngIf="enableDatepicker" [(ngModel)]="dt" name="datepicker" autoClose="outsideClick"></datepicker>
+    <div class="card">
+      <pre class="card-block card-header">Selected date is: <em >{{ dt | date:'dd/MM/yyyy'}}</em></pre>
+    </div>
+  </div>
+</form>
+ <datepicker  [(ngModel)]="dt" name="datepicker1" autoClose="outsideClick"></datepicker> -->
+ 

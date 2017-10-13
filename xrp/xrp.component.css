@@ -1,0 +1,76 @@
+/* :host {
+  display: block;
+  padding: 0 16px;
+} */
+
+h2 {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.005em;
+  margin-bottom: 0;
+  margin-top: 0.83em;
+}
+
+input[type="radio"]{
+  vertical-align: -14px
+}
+
+ table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+} 
+
+#row1{
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-flex-direction:row;
+        -ms-flex-direction:row;
+            flex-direction:row;
+-webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+}
+
+#column1{
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-flex-direction:column;
+        -ms-flex-direction:column;
+            flex-direction:column;
+   
+}
+
+
+#column2{
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-flex-direction:column;
+        -ms-flex-direction:column;
+            flex-direction:column;
+}
+
+#column3{
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+button:disabled {
+  background-color: red
+}
