@@ -1,12 +1,12 @@
 {
   "static": {
     "urls": {
+      "/index.html": "089a35252b1170a4b531a01ebfbefe41bb056525",
       "/worker-basic.min.js": "2f12848c352bd6baf25f0f1d995351696ef518ff",
-      "/index.html": "36717149ca8cc63294d28f9191b2e6472f1fdb9c",
-      "/assets\\data.json": "d475bb8655182da59fd90cab4480d6b1e873d59b",
-      "/css\\main.css": "84969f69b03a02e1ab72a7ccbdbfde6ceb6d0195",
       "/js\\shims.js": "45428ba3353c543b6e05a087a0f065b0fdcbfd4a",
-      "/js\\app.js": "6a19c0df5318323d15b0bd38753e6afce92ce77a",
+      "/js\\app.js": "38f1ae63cb6442073eb82680e7f288a3815182a4",
+      "/css\\main.css": "84969f69b03a02e1ab72a7ccbdbfde6ceb6d0195",
+      "/assets\\data.json": "d475bb8655182da59fd90cab4480d6b1e873d59b",
       "/assets\\favicon\\favicon-DEV.ico": "aa4fb0706ed367fb5c2fd6bd2b058c0dce8cc785",
       "/assets\\favicon\\favicon-PROD.ico": "5d40a29d26398292f08a46b26f6788ec60f5f43e",
       "/assets\\svg\\more.svg": "f0ebcdcc3d9f8f58ef7be95a3498229ec55e8eb6"
